@@ -141,6 +141,12 @@ Box::set_margin (double t, double r, double b, double l)
 }
 
 void
+Box::set_homogenous (bool yn)
+{
+	homogenous = yn;
+}
+
+void
 Box::reset_self ()
 {
 	if (_bounding_box_dirty) {
