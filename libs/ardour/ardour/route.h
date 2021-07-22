@@ -94,6 +94,7 @@ class VCA;
 class SoloIsolateControl;
 class PhaseControl;
 class MonitorControl;
+class TriggerBox;
 
 class LIBARDOUR_API Route : public Stripable,
                             public GraphNode,
@@ -211,6 +212,7 @@ public:
 	boost::shared_ptr<PeakMeter>       peak_meter()       { return _meter; }
 	boost::shared_ptr<const PeakMeter> peak_meter() const { return _meter; }
 	boost::shared_ptr<PeakMeter> shared_peak_meter() const { return _meter; }
+	boost::shared_ptr<TriggerBox> triggerbox() const { return _triggerbox; }
 
 	void flush_processors ();
 
@@ -700,6 +702,7 @@ protected:
 	boost::shared_ptr<Amp>               _volume;
 	boost::shared_ptr<PeakMeter>         _meter;
 	boost::shared_ptr<PolarityProcessor> _polarity;
+	boost::shared_ptr<TriggerBox>        _triggerbox;
 
 	bool _volume_applies_to_output;
 
